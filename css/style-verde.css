@@ -1042,3 +1042,24 @@ html { scroll-padding-top: 0; }
   .cred__cartao::before, .painel::before, .sobre__cartao::before { animation: none !important; }
   *, *::before, *::after { transition: none !important; }
 }
+
+
+/* =========================================================
+   VERSÃO VERDE: SEM DEGRADÊS, SÓ COR SÓLIDA
+   ========================================================= */
+:root {
+  --grad-ouro: linear-gradient(var(--ouro), var(--ouro));
+  --grad-ouro-diag: linear-gradient(var(--ouro), var(--ouro));
+}
+.topo, .menu { background: var(--ouro) !important; animation: none !important; }
+/* cartões verdes (credenciais, áreas, sobre): cor sólida, sem a camada de brilho que deslizava */
+.cred__cartao, .painel, .sobre__cartao { background: var(--ouro) !important; }
+.cred__cartao::before, .painel::before, .sobre__cartao::before { display: none !important; }
+/* linhas sobre as fotos */
+.cred__foto figcaption::before, .sobre__foto figcaption::before { background: var(--ouro) !important; }
+/* botões: claro em creme sólido, escuros em grafite sólido */
+.btn-claro { background: #f6f1e6 !important; animation: none !important; }
+.btn-fale, .btn-escuro { background: var(--grafite) !important; animation: none !important; }
+.sobre__botao { background: var(--grafite-2) !important; }
+/* botão flutuante do WhatsApp sempre verde (o balão "Me chame agora." continua aparecendo de tempos em tempos) */
+.flutuante svg { fill: #25d366 !important; }
