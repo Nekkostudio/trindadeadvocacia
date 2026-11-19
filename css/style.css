@@ -193,11 +193,12 @@ ul { margin: 0; padding: 0; list-style: none; }
   background: url("../img/fundo-justica.webp?v=2") no-repeat calc(50% + 149.5 * var(--u)) calc(-167 * var(--u)) / calc(2257 * var(--u)) auto;
   background-color: var(--grafite);
 }
-/* desktop sem a barra do menu (PSD de 19/11): a hero começa no topo da página e guarda, em cima, a mesma altura
-   do antigo cabeçalho, para o conteúdo continuar no mesmo lugar e a hero inteira caber na tela */
+/* sem a barra do menu no desktop e no celular (pedidos de 19/11); o HTML do cabeçalho continua na página, só escondido */
+html { scroll-padding-top: 0; }
+.topo { display: none !important; }
+/* desktop: a hero começa no topo da página e guarda, em cima, a mesma altura do antigo cabeçalho,
+   para o conteúdo continuar no mesmo lugar e a hero inteira caber na tela */
 @media (min-width: 901px) {
-  html { scroll-padding-top: 0; }
-  .topo { display: none; }
   .hero {
     padding-top: var(--topo-h);
     background-position: calc(50% + 149.5 * var(--u)) calc(var(--topo-h) - 167 * var(--u));
@@ -230,12 +231,6 @@ ul { margin: 0; padding: 0; list-style: none; }
   margin-top: 4.3cqw;
   font-family: var(--serif); font-weight: 400; font-variation-settings: "opsz" 96;
   font-size: 5.66cqw; line-height: 1.12; letter-spacing: -0.012em;
-  color: var(--claro);
-}
-.hero__sub {
-  margin-top: 2.2cqw;
-  max-width: 36cqw;
-  font-size: 3.45cqw; line-height: 1.2; font-weight: 300;
   color: var(--claro);
 }
 .hero .btn-claro {
@@ -316,7 +311,7 @@ ul { margin: 0; padding: 0; list-style: none; }
      ela escapava 1 a 2 px do overflow arredondado) */
   clip-path: inset(0 round var(--raio-foto));
   isolation: isolate;
-  background: #4a3022;
+  background: #0e0e0e;
 }
 .cred__foto img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; transform: scale(1.06); }
 .cred__foto figcaption {
@@ -325,7 +320,8 @@ ul { margin: 0; padding: 0; list-style: none; }
   padding: 0 10% 7% 10%;
   display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-start;
   /* como no modelo: a foto abaixo da linha fica desfocada, com um escurecimento leve */
-  background: linear-gradient(180deg, rgba(35, 22, 15, 0.18) 0%, rgba(30, 20, 14, 0.38) 100%);
+  /* escurecimento um pouco mais forte: a blusa branca da foto (19/11) clareia o desfoque atrás do nome */
+  background: linear-gradient(180deg, rgba(14, 14, 14, 0.42) 0%, rgba(10, 10, 10, 0.6) 100%);
   -webkit-backdrop-filter: blur(14px);
   backdrop-filter: blur(14px);
   border-radius: 0 0 var(--raio-foto) var(--raio-foto);
@@ -814,7 +810,6 @@ ul { margin: 0; padding: 0; list-style: none; }
   .selo-area__icone { width: 28px; height: 28px; }
   .hero__titulo { margin-top: 22px; font-size: clamp(1.9rem, 8vw, 3rem); line-height: 1.12; }
   .quebra { display: none; }
-  .hero__sub { margin-top: 14px; max-width: none; font-size: clamp(1.2rem, 5vw, 1.7rem); }
   .hero .btn-claro { margin-top: 26px; width: 100%; max-width: 460px; min-height: 64px; font-size: 1.05rem; border-radius: 16px; padding: 0 18px 0 10px; gap: 12px; }
   .hero .btn-claro__icone { width: 44px; height: 44px; }
   .hero__foto { position: relative; width: min(100%, 520px); right: auto; top: auto; margin: 18px auto 0; }
@@ -1010,8 +1005,8 @@ ul { margin: 0; padding: 0; list-style: none; }
     font-size: max(10px, 3vw);
   }
   .selo-area__icone { width: max(20px, 5.9vw); height: max(20px, 5.9vw); }
+  /* título e apoio num bloco só (19/11); quebras do celular: "…do INSS / …trabalhistas / desrespeitados, orientação / jurídica faz toda a diferença." */
   .hero__titulo { margin-top: max(14px, 3.4vw); font-size: max(1.3rem, 5.6vw); line-height: 1.12; }
-  .hero__sub { margin-top: max(10px, 3vw); max-width: none; font-size: max(15px, 4.07vw); line-height: 1.2; }
   .hero .btn-claro {
     width: 100%; max-width: none; min-height: max(48px, 9.8vw);
     margin-top: max(20px, 6.2vw);
