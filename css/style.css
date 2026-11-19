@@ -193,6 +193,16 @@ ul { margin: 0; padding: 0; list-style: none; }
   background: url("../img/fundo-justica.webp?v=2") no-repeat calc(50% + 149.5 * var(--u)) calc(-167 * var(--u)) / calc(2257 * var(--u)) auto;
   background-color: var(--grafite);
 }
+/* desktop sem a barra do menu (PSD de 19/11): a hero começa no topo da página e guarda, em cima, a mesma altura
+   do antigo cabeçalho, para o conteúdo continuar no mesmo lugar e a hero inteira caber na tela */
+@media (min-width: 901px) {
+  html { scroll-padding-top: 0; }
+  .topo { display: none; }
+  .hero {
+    padding-top: var(--topo-h);
+    background-position: calc(50% + 149.5 * var(--u)) calc(var(--topo-h) - 167 * var(--u));
+  }
+}
 .hero__grade {
   container-type: inline-size;
   position: relative;
