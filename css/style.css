@@ -1008,7 +1008,8 @@ ul { margin: 0; padding: 0; list-style: none; }
   .hero__cartao .quebra { display: inline; }
   .selo-redondo { width: max(34px, 9.3vw); height: max(34px, 9.3vw); right: -1.85vw; bottom: -2.5vw; }
 
-  .faixa { order: 2; position: relative; margin-top: calc(-1 * max(36px, 9.9vw)); height: max(36px, 9.9vw); }
+  /* a faixa desce 1vw além do pé da foto: assim cobre a última linha da foto, que vazava por baixo dela */
+  .faixa { order: 2; position: relative; margin-top: calc(-1 * max(36px, 9.9vw) + 1vw); height: max(36px, 9.9vw); }
   .faixa__item { gap: max(6px, 1.8vw); padding-right: max(16px, 5vw); font-size: max(9px, 2.3vw); }
   .faixa__item img { height: max(18px, 4.6vw); }
 
