@@ -188,9 +188,9 @@ ul { margin: 0; padding: 0; list-style: none; }
 .hero {
   position: relative;
   overflow: hidden;
-  background:
-    linear-gradient(180deg, rgba(44, 44, 43, 0.9) 0%, rgba(44, 44, 43, 0.93) 55%, rgba(44, 44, 43, 0.97) 100%),
-    url("../img/fundo-colunas.webp") center 35% / cover no-repeat;
+  /* fundo do PSD (19/11): estátua da Justiça a 16% sobre o grafite, já escurecida na imagem; mesma posição e
+     tamanho da camada (2257u de largura, 339u à esquerda do container e 167u acima do topo da hero) */
+  background: url("../img/fundo-justica.webp?v=2") no-repeat calc(50% + 149.5 * var(--u)) calc(-167 * var(--u)) / calc(2257 * var(--u)) auto;
   background-color: var(--grafite);
 }
 .hero__grade {
@@ -238,17 +238,20 @@ ul { margin: 0; padding: 0; list-style: none; }
 }
 .hero .btn-claro__icone { width: 5.1cqw; height: 5.1cqw; }
 
+/* foto na poltrona ovo (19/11), como a camada "Agrupar 5" do PSD: 710u de largura, 700u depois do início
+   do container e 36u abaixo do topo da hero */
 .hero__foto {
   position: absolute; z-index: 2;
-  width: 61.9cqw;
-  right: -8.7cqw;
-  top: 3.1cqw;
+  width: 55.47cqw;
+  right: -10.16cqw;
+  top: 2.81cqw;
 }
 .hero__foto img { width: 100%; height: auto; }
+/* cartão no mesmo lugar de antes (medido pelo topo da hero, em cqw), não pelo tamanho da foto */
 .hero__cartao {
   position: absolute;
-  left: 5.3%; top: 50.3%;
-  width: 63.4%;
+  left: -4.61cqw; top: 39.22cqw;
+  width: 39.24cqw;
   padding: 2.4cqw 3.4cqw 2.3cqw 3.8cqw;
   background: rgba(178, 148, 78, 0.95);
   border-radius: 3.1cqw;
@@ -270,28 +273,6 @@ ul { margin: 0; padding: 0; list-style: none; }
 .selo-redondo__texto { font-family: var(--serif); font-weight: 500; font-size: 9.6px; fill: #fff; }
 .selo-redondo__balanca { fill: var(--ouro); }
 
-/* faixa rolante */
-.faixa {
-  position: absolute; left: 0; right: 0; bottom: 0; z-index: 4;
-  height: max(56px, calc(107 * var(--u)));
-  overflow: hidden;
-  display: flex; align-items: center;
-  background: linear-gradient(90deg, rgba(42, 42, 41, 0.92) 0%, rgba(80, 78, 74, 0.62) 50%, rgba(58, 57, 55, 0.78) 100%);
-  /* desfoca a foto e o fundo que passam por trás da faixa */
-  -webkit-backdrop-filter: blur(12px);
-  backdrop-filter: blur(12px);
-}
-.faixa__trilho { display: flex; width: max-content; animation: rolar 38s linear infinite; }
-.faixa__grupo { display: flex; }
-.faixa__item {
-  display: flex; align-items: center; gap: max(10px, calc(20 * var(--u)));
-  padding-right: max(32px, calc(56 * var(--u)));
-  font-family: var(--serif); font-weight: 400;
-  font-size: max(0.85rem, calc(25 * var(--u))); line-height: 1.05;
-  color: #fff; white-space: nowrap;
-}
-.faixa__item img { height: max(28px, calc(51 * var(--u))); width: auto; }
-@keyframes rolar { to { transform: translateX(-50%); } }
 
 /* =========================================================
    2. CREDIBILIDADE
@@ -552,7 +533,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 }
 .sobre__botao .btn-escuro__icone { width: max(30px, calc(43 * var(--u))); height: max(30px, calc(43 * var(--u))); }
 
-.sobre__foto { position: relative; margin: 0; overflow: hidden; isolation: isolate; clip-path: inset(0); background: #3a3a3a; }
+.sobre__foto { position: relative; margin: 0; overflow: hidden; isolation: isolate; clip-path: inset(0); background: #0e0e0e; }
 .sobre__foto img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 8%; }
 .sobre__foto figcaption {
   position: absolute; left: 0; right: 0; bottom: 0;
@@ -830,7 +811,6 @@ ul { margin: 0; padding: 0; list-style: none; }
   .hero__foto img { -webkit-mask-image: linear-gradient(180deg, #000 82%, transparent 100%); mask-image: linear-gradient(180deg, #000 82%, transparent 100%); }
   .hero__cartao { left: 6%; top: auto; bottom: 10%; width: 72%; padding: 16px 20px 18px; border-radius: 18px; font-size: clamp(0.85rem, 3.4vw, 1rem); }
   .selo-redondo { width: 64px; height: 64px; right: -16px; bottom: -22px; }
-  .faixa { position: relative; }
 
   /* credibilidade */
   .cred__grade { grid-template-columns: 1fr; gap: 28px; }
@@ -906,7 +886,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   100% { transform: translate3d(14%, -4%, 0) rotate(5deg); }
 }
 
-/* faixas e botões: o degradê tem o dobro da largura e desliza de um lado para o outro */
+/* cabeçalho e botões: o degradê tem o dobro da largura e desliza de um lado para o outro */
 .topo {
   background: linear-gradient(90deg, #a98b47 0%, #b5964f 25%, #d8b766 50%, #b5964f 75%, #a98b47 100%);
   background-size: 200% 100%;
@@ -923,11 +903,6 @@ ul { margin: 0; padding: 0; list-style: none; }
   animation: ouro-fluxo 10s ease-in-out infinite alternate;
 }
 .sobre__botao { background: linear-gradient(90deg, #262626 0%, #333 30%, #4a4a4a 50%, #333 70%, #262626 100%); background-size: 200% 100%; }
-.faixa {
-  background: linear-gradient(90deg, rgba(42, 42, 41, 0.92) 0%, rgba(80, 78, 74, 0.62) 25%, rgba(58, 57, 55, 0.78) 50%, rgba(80, 78, 74, 0.62) 75%, rgba(42, 42, 41, 0.92) 100%);
-  background-size: 200% 100%;
-  animation: ouro-fluxo 16s ease-in-out infinite alternate;
-}
 
 /* cartões dourados grandes: o degradê fica numa camada maior que o cartão e "flutua"
    (só transform, que a placa de vídeo anima sem pesar a página) */
@@ -955,7 +930,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 
 /* =========================================================
    CELULAR: topo conforme a prancheta 2 do PSD (1080 px de largura)
-   ordem: foto com o cartão, faixa e depois o texto; cabeçalho transparente por cima da foto
+   ordem: foto com o cartão e depois o texto; cabeçalho transparente por cima da foto
    (1 px da prancheta = 100vw / 1080; pisos mínimos para o texto continuar legível)
    ========================================================= */
 .quebra-m { display: none; }
@@ -985,29 +960,29 @@ ul { margin: 0; padding: 0; list-style: none; }
   .topo.aberto .menu-botao span:nth-child(1) { transform: translateY(calc(max(4px, 1vw) + max(2px, 0.65vw))) rotate(45deg); }
   .topo.aberto .menu-botao span:nth-child(3) { transform: translateY(calc(-1 * (max(4px, 1vw) + max(2px, 0.65vw)))) rotate(-45deg); }
 
-  /* topo: foto em cima, faixa, e o texto embaixo no fundo grafite */
+  /* topo: foto em cima e o texto embaixo; fundo da estátua como na prancheta 2 (2257 px de largura,
+     900 px à esquerda e 43 px acima do topo) */
   .hero {
     display: flex; flex-direction: column;
-    background:
-      linear-gradient(180deg, rgba(44, 44, 43, 0.55) 0, rgba(44, 44, 43, 0.72) 70vw, #2d2d2d 111vw, #2d2d2d 100%),
-      url("../img/fundo-colunas-1280.webp") center top / auto 125vw no-repeat,
-      var(--grafite);
+    background: url("../img/fundo-justica-1280.webp?v=2") no-repeat -83.3vw -4vw / 209vw auto;
+    background-color: var(--grafite);
   }
   .hero__grade { display: contents; }
 
+  /* foto e cartão nas posições da prancheta 2: foto 750 px de largura em (225, 119), cartão em (162, 649) */
   .hero__foto {
     order: 1;
     position: relative; right: auto; top: auto;
-    width: 100%; height: 110.8vw; margin: 0;
-    overflow: hidden;
+    width: 100%; height: 110.4vw; margin: 0;
+    overflow: visible;
   }
   .hero__foto img {
-    position: absolute; left: 12.7vw; top: 13.3vw;
-    width: 80vw; max-width: none; height: auto;
+    position: absolute; left: 20.83vw; top: 11.02vw;
+    width: 69.44vw; max-width: none; height: auto;
     -webkit-mask-image: none; mask-image: none;
   }
   .hero__cartao {
-    left: 21.2vw; top: 60.8vw; bottom: auto; width: 46.7vw;
+    left: 15vw; top: 60.1vw; bottom: auto; width: 49.1vw;
     padding: 2.1vw 2.6vw 2.4vw 4vw;
     border-radius: 3vw;
     font-size: max(10px, 2.45vw); line-height: 1.2;
@@ -1015,20 +990,16 @@ ul { margin: 0; padding: 0; list-style: none; }
   .hero__cartao .quebra { display: inline; }
   .selo-redondo { width: max(42px, 11.6vw); height: max(42px, 11.6vw); right: -2.3vw; bottom: -3.1vw; }
 
-  /* a faixa desce 1vw além do pé da foto: assim cobre a última linha da foto, que vazava por baixo dela */
-  .faixa { order: 2; position: relative; margin-top: calc(-1 * max(36px, 9.9vw) + 1vw); height: max(36px, 9.9vw); }
-  .faixa__item { gap: max(6px, 1.8vw); padding-right: max(16px, 5vw); font-size: max(9px, 2.3vw); }
-  .faixa__item img { height: max(18px, 4.6vw); }
-
-  .hero__texto { order: 3; width: auto; padding: max(20px, 4.9vw) max(20px, 10.1vw) max(40px, 13.8vw); }
+  .hero__texto { order: 2; width: auto; padding: max(20px, 4.9vw) max(20px, 10.1vw) max(40px, 13.8vw); }
+  /* etiqueta na largura do texto, igual ao botão (prancheta 2 de 19/11: 869 x 107 px) */
   .selo-area {
-    display: flex; width: 58.4vw; min-width: 230px; min-height: max(36px, 9vw);
-    margin-inline: auto;
-    padding: 0 3vw; gap: 2.6vw;
+    display: flex; width: 100%; min-width: 0; min-height: max(36px, 9.9vw);
+    margin-inline: 0;
+    padding: 0 3vw; gap: 2.8vw;
     border-width: max(2px, 0.37vw); border-radius: 2.2vw;
-    font-size: max(10px, 2.1vw);
+    font-size: max(10px, 3vw);
   }
-  .selo-area__icone { width: max(20px, 5.4vw); height: max(20px, 5.4vw); }
+  .selo-area__icone { width: max(20px, 5.9vw); height: max(20px, 5.9vw); }
   .hero__titulo { margin-top: max(14px, 3.4vw); font-size: max(1.3rem, 5.6vw); line-height: 1.12; }
   .hero__sub { margin-top: max(10px, 3vw); max-width: none; font-size: max(15px, 4.07vw); line-height: 1.2; }
   .hero .btn-claro {
@@ -1060,8 +1031,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .topo, .btn-claro, .btn-fale, .btn-escuro, .faixa,
+  .topo, .btn-claro, .btn-fale, .btn-escuro,
   .cred__cartao::before, .painel::before, .sobre__cartao::before { animation: none !important; }
-  .faixa__trilho { animation: none; }
   *, *::before, *::after { transition: none !important; }
 }
