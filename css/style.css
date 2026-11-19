@@ -533,6 +533,9 @@ html { scroll-padding-top: 0; }
   display: flex; flex-direction: column; align-items: flex-start;
   padding: calc(60 * var(--u)) calc(24 * var(--u)) calc(49 * var(--u)) 0;
 }
+/* parágrafos do Sobre: quebras fixas no desktop alinhadas à largura do título; no celular, sem palavra sozinha no fim */
+.sobre__texto p { text-wrap: pretty; }
+.sobre__texto p + p { text-wrap: balance; } /* o segundo é curto: linhas do mesmo tamanho no celular */
 .sobre__titulo { font-size: max(2rem, calc(58 * var(--u))); line-height: 1.09; }
 .sobre__texto p {
   margin-top: max(18px, calc(66 * var(--u)));
