@@ -1055,3 +1055,13 @@ ul { margin: 0; padding: 0; list-style: none; }
   .faixa__trilho { animation: none; }
   *, *::before, *::after { transition: none !important; }
 }
+
+/* =========================================================
+   SEM A BARRA DO MENU (pedido de 19/11, só nesta versão 1)
+   no desktop a hero guarda em cima a mesma altura do antigo cabeçalho, para o conteúdo continuar no lugar
+   ========================================================= */
+html { scroll-padding-top: 0; }
+.topo { display: none !important; }
+@media (min-width: 901px) {
+  .hero { padding-top: var(--topo-h); }
+}
