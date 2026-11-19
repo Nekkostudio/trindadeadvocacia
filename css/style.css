@@ -555,10 +555,12 @@ html { scroll-padding-top: 0; }
 
 .sobre__foto { position: relative; margin: 0; overflow: hidden; isolation: isolate; clip-path: inset(0); background: #0e0e0e; }
 .sobre__foto img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 8%; }
+/* legenda em 3 linhas (19/11): a área desfocada tem a altura do texto, com o mesmo respiro em cima e embaixo */
 .sobre__foto figcaption {
   position: absolute; left: 0; right: 0; bottom: 0;
-  height: 29.9%;
-  padding: calc(49 * var(--u)) calc(40 * var(--u)) 0 calc(85 * var(--u));
+  height: auto;
+  padding: calc(42 * var(--u)) calc(40 * var(--u)) calc(44 * var(--u)) calc(64 * var(--u));
+  text-wrap: balance;
   /* escurecimento mais forte: a blusa branca do retrato (19/11) clareia o desfoque atrás do texto */
   background: linear-gradient(180deg, rgba(14, 14, 14, 0.45) 0%, rgba(10, 10, 10, 0.62) 100%);
   -webkit-backdrop-filter: blur(14px);
