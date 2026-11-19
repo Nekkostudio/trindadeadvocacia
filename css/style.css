@@ -209,7 +209,7 @@ html { scroll-padding-top: 0; }
 .hero__logo {
   position: absolute; z-index: 4;
   left: calc((100% - var(--cw)) / 2);
-  top: calc(128 * var(--u)); /* grupo (logo, etiqueta, título e botão) centralizado na altura da hero */
+  top: calc(253.9 * var(--u)); /* grupo (logo, etiqueta, título de 5 linhas e botão) centralizado na altura da hero */
   height: calc(var(--topo-h) * 0.72); width: auto;
 }
 .hero__grade {
@@ -220,7 +220,7 @@ html { scroll-padding-top: 0; }
 .hero__texto {
   position: relative; z-index: 3;
   width: 50.8cqw;
-  padding-top: 13.44cqw; /* desceu junto com o logo (19/11): o grupo fica centralizado na altura da hero */
+  padding-top: 21.75cqw; /* 40px (em 1903) abaixo do logo; o grupo fica centralizado na altura da hero */
 }
 /* etiqueta: ~63% da largura do título, como na referência */
 .selo-area {
@@ -235,16 +235,18 @@ html { scroll-padding-top: 0; }
   color: #fff;
 }
 .selo-area__icone { width: 3cqw; height: 3cqw; fill: var(--ouro); flex: none; }
-/* desktop: quebras fixas pedidas em 19/11 ("Se você precisa do / INSS ou teve seus / direitos trabalhistas /
-   desrespeitados, / orientação jurídica / faz toda a diferença."), alinhado à esquerda, sem justificar */
+/* quebras fixas pedidas em 19/11, iguais no desktop e no celular ("Se você precisa do INSS / ou teve seus direitos
+   trabalhistas / desrespeitados, orientação e / acompanhamento jurídico / fazem toda diferença."), alinhado à
+   esquerda, sem justificar. No desktop a linha mais longa termina antes do braço da Aline, sem quebrar de novo */
 .hero__titulo {
-  margin-top: 4.3cqw;
+  margin-top: 3.44cqw;
   font-family: var(--serif); font-weight: 400; font-variation-settings: "opsz" 96;
-  font-size: 5.66cqw; line-height: 1.12; letter-spacing: -0.012em;
+  font-size: 3.9cqw; line-height: 1.12; letter-spacing: -0.012em;
+  white-space: nowrap;
   color: var(--claro);
 }
 .hero .btn-claro {
-  margin-top: 5.1cqw;
+  margin-top: 4cqw;
   width: 49cqw; min-height: 8.2cqw;
   font-size: 2.55cqw;
   border-radius: 1.9cqw;
@@ -1039,8 +1041,8 @@ html { scroll-padding-top: 0; }
     font-size: max(10px, 3vw);
   }
   .selo-area__icone { width: max(20px, 5.9vw); height: max(20px, 5.9vw); }
-  /* título e apoio num bloco só (19/11); quebras do celular: "…do INSS / …trabalhistas / desrespeitados, orientação / jurídica faz toda a diferença." */
-  .hero__titulo { margin-top: max(14px, 3.4vw); font-size: max(1.3rem, 5.6vw); line-height: 1.12; }
+  /* título num bloco só (19/11), com as mesmas quebras do desktop; aqui pode quebrar de novo se a tela for estreita */
+  .hero__titulo { margin-top: max(14px, 3.4vw); font-size: max(1.3rem, 5.6vw); line-height: 1.12; white-space: normal; }
   .hero .btn-claro {
     width: 100%; max-width: none; min-height: max(48px, 9.8vw);
     margin-top: max(20px, 6.2vw);
