@@ -37,9 +37,10 @@
 
   // Botão flutuante: depois de um tempinho visível ele fica verde e mostra "Me chame agora."
   // por alguns segundos; volta ao dourado e repete o ciclo.
-  var ESPERA = 5000, VERDE = 6000, PAUSA = 14000;
+  // ESPERA: tempo até ficar verde; VERDE: quanto tempo fica verde; PAUSA: dourado até recomeçar
+  var ESPERA = 1500, VERDE = 5000, PAUSA = 5000;
   function cicloFlutuante() {
-    if (!flutuante.classList.contains("visivel")) { setTimeout(cicloFlutuante, 1500); return; }
+    if (!flutuante.classList.contains("visivel")) { setTimeout(cicloFlutuante, 400); return; }
     setTimeout(function () {
       if (!flutuante.classList.contains("visivel")) { cicloFlutuante(); return; }
       flutuante.classList.add("verde");

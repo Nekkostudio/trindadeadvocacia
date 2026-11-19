@@ -724,7 +724,14 @@ ul { margin: 0; padding: 0; list-style: none; }
 .rodape__ico--whats { background: radial-gradient(circle, #fff 0 56%, transparent 58%); }
 .rodape__ico--whats svg { width: 100%; height: 100%; fill: var(--grafite); }
 
-.rodape__base { margin-top: max(36px, calc(67 * var(--u))); font-size: max(0.85rem, calc(17 * var(--u))); font-weight: 300; line-height: 1.2; color: #fff; }
+/* base do rodapé numa faixa de fundo mais escuro, de ponta a ponta, até o fim da página */
+.rodape__base {
+  margin-top: max(36px, calc(67 * var(--u)));
+  padding-block: var(--esp-titulo);
+  background: var(--grafite-3);
+  font-size: max(0.85rem, calc(17 * var(--u))); font-weight: 300; line-height: 1.2; color: #fff;
+  text-align: center;
+}
 .rodape__base p + p { margin-top: max(14px, calc(25 * var(--u))); }
 
 /* =========================================================
@@ -884,7 +891,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 .cred, .ident, .areas, .sobre, .atend { padding-top: var(--esp-secao); padding-bottom: 0; }
 .atend { padding-bottom: var(--esp-secao); }
 .duvidas, .final { padding-block: var(--esp-secao); }
-.rodape { padding-block: var(--esp-secao); }
+.rodape { padding-top: var(--esp-secao); padding-bottom: 0; }
 
 .ident .abas, .painel, .atend__grade, .duvidas .faq { margin-top: var(--esp-titulo); }
 .ident__fecho, .trabalho, .duvidas__chamada { margin-top: var(--esp-bloco); }
@@ -1006,7 +1013,7 @@ ul { margin: 0; padding: 0; list-style: none; }
     font-size: max(10px, 2.45vw); line-height: 1.2;
   }
   .hero__cartao .quebra { display: inline; }
-  .selo-redondo { width: max(34px, 9.3vw); height: max(34px, 9.3vw); right: -1.85vw; bottom: -2.5vw; }
+  .selo-redondo { width: max(42px, 11.6vw); height: max(42px, 11.6vw); right: -2.3vw; bottom: -3.1vw; }
 
   /* a faixa desce 1vw além do pé da foto: assim cobre a última linha da foto, que vazava por baixo dela */
   .faixa { order: 2; position: relative; margin-top: calc(-1 * max(36px, 9.9vw) + 1vw); height: max(36px, 9.9vw); }
@@ -1047,6 +1054,8 @@ ul { margin: 0; padding: 0; list-style: none; }
     font-size: clamp(10px, calc((100vw - 2 * var(--gutter) - 104px) / 17.8), 0.95rem);
   }
   .rodape__ico { width: 28px; height: 28px; }
+  /* espaço no fim da página para o botão flutuante do WhatsApp não cobrir o texto da base */
+  .rodape__base { padding-bottom: calc(var(--esp-titulo) + 60px); }
 }
 
 @media (prefers-reduced-motion: reduce) {
