@@ -193,16 +193,24 @@ ul { margin: 0; padding: 0; list-style: none; }
   background: url("../img/fundo-justica.webp?v=2") no-repeat calc(50% + 149.5 * var(--u)) calc(-167 * var(--u)) / calc(2257 * var(--u)) auto;
   background-color: var(--grafite);
 }
-/* sem a barra do menu no desktop e no celular (pedidos de 19/11); o HTML do cabeçalho continua na página, só escondido */
+/* sem a barra do menu no desktop (pedido de 19/11); no celular o cabeçalho voltou com o logo e o menu ☰ */
 html { scroll-padding-top: 0; }
-.topo { display: none !important; }
 /* desktop: a hero começa no topo da página e guarda, em cima, a mesma altura do antigo cabeçalho,
    para o conteúdo continuar no mesmo lugar e a hero inteira caber na tela */
 @media (min-width: 901px) {
+  .topo { display: none !important; }
   .hero {
     padding-top: var(--topo-h);
     background-position: calc(50% + 149.5 * var(--u)) calc(var(--topo-h) - 167 * var(--u));
   }
+}
+/* logo branco no topo esquerdo da hero (19/11), no lugar onde ficava o do cabeçalho: alinhado com o início do
+   conteúdo e centralizado na faixa de cima da hero */
+.hero__logo {
+  position: absolute; z-index: 4;
+  left: calc((100% - var(--cw)) / 2);
+  top: calc(128 * var(--u)); /* grupo (logo, etiqueta, título e botão) centralizado na altura da hero */
+  height: calc(var(--topo-h) * 0.72); width: auto;
 }
 .hero__grade {
   container-type: inline-size;
@@ -212,7 +220,7 @@ html { scroll-padding-top: 0; }
 .hero__texto {
   position: relative; z-index: 3;
   width: 50.8cqw;
-  padding-top: 6.4cqw;
+  padding-top: 13.44cqw; /* desceu junto com o logo (19/11): o grupo fica centralizado na altura da hero */
 }
 /* etiqueta: ~63% da largura do título, como na referência */
 .selo-area {
@@ -991,6 +999,8 @@ html { scroll-padding-top: 0; }
   }
   .hero__grade { display: contents; }
 
+  /* no celular o logo fica no cabeçalho, ao lado do menu ☰ (o da hero só aparece no desktop) */
+  .hero__logo { display: none; }
   /* primeira foto da Aline, na posição da primeira versão, cortada no divisor dourado logo acima da etiqueta */
   .hero__foto {
     order: 1;
