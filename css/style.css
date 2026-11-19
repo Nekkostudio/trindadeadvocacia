@@ -227,6 +227,8 @@ html { scroll-padding-top: 0; }
   color: #fff;
 }
 .selo-area__icone { width: 3cqw; height: 3cqw; fill: var(--ouro); flex: none; }
+/* desktop: quebras fixas pedidas em 19/11 ("Se você precisa do / INSS ou teve seus / direitos trabalhistas /
+   desrespeitados, / orientação jurídica / faz toda a diferença."), alinhado à esquerda, sem justificar */
 .hero__titulo {
   margin-top: 4.3cqw;
   font-family: var(--serif); font-weight: 400; font-variation-settings: "opsz" 96;
@@ -411,11 +413,13 @@ html { scroll-padding-top: 0; }
 }
 .abas li:hover { transform: translateY(-3px); background-color: #bb9c56; }
 .abas__largo { grid-column: 1 / -1; padding-right: 30% !important; }
+/* fecho em duas linhas na largura do site (a mesma dos quadros e do título acima), quebrando depois de "adequada," */
 .ident__fecho {
   margin-top: max(26px, calc(42 * var(--u)));
-  max-width: calc(1160 * var(--u));
+  max-width: none;
   font-size: max(1.05rem, calc(30 * var(--u))); line-height: 1.32; font-weight: 300;
   color: #fff;
+  text-wrap: pretty; /* no celular, sem uma palavra sozinha na última linha */
 }
 
 /* =========================================================
