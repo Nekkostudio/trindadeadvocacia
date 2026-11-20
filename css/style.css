@@ -866,6 +866,8 @@ html { scroll-padding-top: 0; }
 
   /* identificação */
   .abas { grid-template-columns: 1fr; }
+  /* texto dos quadros maior no celular (20/11), no tamanho do texto do cartão dourado de cima */
+  .abas li { font-size: clamp(1.05rem, 4.6vw, 1.2rem); font-weight: 500; text-wrap: balance; } /* linhas parecidas, sem palavra sozinha no fim */
   .abas__largo { padding-right: 20px !important; }
   .ident .titulo, .ident__fecho { max-width: none; }
 
@@ -1093,4 +1095,51 @@ html { scroll-padding-top: 0; }
   .topo, .btn-claro, .btn-fale, .btn-escuro,
   .cred__cartao::before, .painel::before, .sobre__cartao::before { animation: none !important; }
   *, *::before, *::after { transition: none !important; }
+}
+
+/* =========================================================
+   TEXTOS CENTRALIZADOS (pedido de 20/11)
+   Tudo num bloco só, no fim do arquivo, para ficar fácil de ajustar ou desfazer.
+   Ficam como antes: as perguntas frequentes (sanfona, com o + à direita), a hero no desktop e o rodapé
+   (desktop e celular), a pedido do usuário.
+   ========================================================= */
+/* hero: centralizada só no celular, onde o texto fica embaixo da foto */
+@media (max-width: 900px) {
+  .hero__texto { text-align: center; }
+}
+
+/* credenciais: nome e OAB no meio do cartão da foto; "Há 18 anos" e "Pós-graduada" no meio da coluna */
+.cred__id { text-align: center; }
+.cred__texto { align-items: center; text-align: center; }
+.pilula--local { justify-content: center; }
+
+/* situações: título, quadros e fecho */
+.ident .titulo, .ident__fecho { text-align: center; }
+.abas li { text-align: center; }
+@media (min-width: 901px) { .abas__largo { padding-inline: 18% !important; } } /* no celular fica o respiro de 20px dos outros quadros */
+
+/* áreas: título do painel, cartões e Direito do Trabalho (título, texto, lista e botão em coluna) */
+.painel__topo { justify-content: center; text-align: center; }
+.cartao { text-align: center; }
+.cartao--largo p { margin-inline: auto; }
+.trabalho__dentro { flex-direction: column; align-items: center; text-align: center; }
+.trabalho p { margin-inline: auto; }
+.trabalho__lista { order: 1; align-self: stretch; text-align: left; }
+.trabalho .btn-claro { order: 2; }
+
+/* sobre: título, parágrafos e botão no meio do lado dourado; legenda da foto no meio */
+.sobre__texto { align-items: center; text-align: center; }
+.sobre__foto figcaption { text-align: center; }
+@media (min-width: 901px) {
+  .sobre__texto { padding-left: calc(24 * var(--u)); }
+  .sobre__foto figcaption { padding-inline: calc(48 * var(--u)); }
+}
+
+/* atendimento: ícone, título e texto no meio de cada cartão */
+.atend__item { justify-items: center; text-align: center; }
+
+@media (max-width: 900px) {
+  /* lista trabalhista: o bloco no meio, com os ícones ainda alinhados entre si */
+  .trabalho__lista { grid-template-columns: fit-content(100%); justify-content: center; }
+  .trabalho .btn-claro { justify-content: center; }
 }
