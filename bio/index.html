@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dra. Aline Trindade | Trindade Advocacia</title>
+  <meta name="description" content="Advocacia Previdenciária e Trabalhista. Atendimento presencial em Florianópolis e online para todo o Brasil.">
+  <!-- página do link da bio do Instagram (20/11): fica fora do Google para não competir com o site -->
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#2d2d2d">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="Trindade Advocacia | Dra. Aline Trindade">
+  <meta property="og:description" content="Advocacia Previdenciária e Trabalhista. Atendimento presencial em Florianópolis e online para todo o Brasil.">
+  <meta property="og:url" content="https://www.trindadeprevadvocacia.adv.br/bio/">
+  <meta property="og:image" content="https://www.trindadeprevadvocacia.adv.br/img/compartilhar.jpg">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Roboto:wght@300..700&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="/img/aline-hero.webp?v=20261119-4" type="image/webp">
+  <style>
+    /* Mesma estética da hero do site no celular: grafite, estátua da Justiça ao fundo, foto da Aline cortada
+       pela linha dourada, etiqueta com borda dourada e o botão claro do WhatsApp.
+       --b vale 1% da coluna (no celular, 1vw; no computador a coluna para em 480px) */
+    :root {
+      --grafite: #2d2d2d;
+      --grafite-3: #1f1f1f;
+      --ouro: #b2944e;
+      --ouro-claro: #f2cf7d;
+      --claro: #f3efe8;
+      --claro-2: #d9d2c5;
+      --ico-whats: #edca79;
+      --serif: "Old Standard TT", "Didot", "Times New Roman", serif;
+      --sans: "Roboto", "Segoe UI", Arial, sans-serif;
+      --w: min(100vw, 480px);
+      --b: calc(var(--w) / 100);
+    }
+    * { box-sizing: border-box; }
+    html { background: var(--grafite-3); }
+    body {
+      margin: 0;
+      color: var(--claro);
+      font-family: var(--sans);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    img, svg { display: block; }
+    h1, p { margin: 0; }
+    ul { margin: 0; padding: 0; list-style: none; }
+    :focus-visible { outline: 3px solid var(--ouro-claro); outline-offset: 3px; border-radius: 6px; }
+
+    .bio {
+      width: var(--w);
+      min-height: 100vh; min-height: 100dvh;
+      margin-inline: auto;
+      display: flex; flex-direction: column;
+      background: var(--grafite);
+      box-shadow: 0 0 60px rgba(0, 0, 0, 0.45);
+    }
+
+    /* foto: o fundo da estátua na mesma posição da hero do celular, a Aline cortada na cintura pela linha dourada */
+    .bio__foto {
+      position: relative;
+      height: calc(76 * var(--b));
+      overflow: hidden;
+      background: url("/img/fundo-justica-1280.webp?v=2") no-repeat calc(-83.3 * var(--b)) calc(-4 * var(--b)) / calc(209 * var(--b)) auto;
+    }
+    .bio__logo {
+      position: absolute; z-index: 2;
+      left: calc(7 * var(--b)); top: calc(7 * var(--b));
+      height: calc(14 * var(--b)); width: auto;
+    }
+    .bio__aline {
+      position: absolute;
+      left: calc(11 * var(--b)); top: calc(8 * var(--b));
+      width: calc(86 * var(--b)); max-width: none; height: auto;
+    }
+    .bio__foto::after {
+      content: ""; position: absolute; left: 0; right: 0; bottom: 0; z-index: 3;
+      height: max(2px, calc(0.55 * var(--b)));
+      background: linear-gradient(90deg, rgba(178, 148, 78, 0) 0%, #b2944e 18%, #f2cf7d 50%, #b2944e 82%, rgba(178, 148, 78, 0) 100%);
+    }
+
+    .bio__texto {
+      flex: 1;
+      display: flex; flex-direction: column;
+      padding: calc(7 * var(--b)) calc(8 * var(--b)) calc(7 * var(--b));
+      text-align: center;
+    }
+    .bio__nome {
+      font-family: var(--serif); font-weight: 400;
+      font-size: max(1.9rem, calc(9.4 * var(--b))); line-height: 1.08; letter-spacing: -0.012em;
+    }
+    .bio__oab {
+      margin-top: calc(1.6 * var(--b));
+      font-size: max(0.9rem, calc(3.7 * var(--b))); font-weight: 300; line-height: 1.3;
+      color: var(--claro-2);
+    }
+
+    /* etiqueta da hero: borda dourada, balança dourada e texto branco */
+    .selo-area {
+      display: flex; align-items: center; justify-content: center; gap: calc(2.6 * var(--b));
+      min-height: max(40px, calc(10.4 * var(--b)));
+      margin-top: calc(6 * var(--b));
+      padding: 0 calc(3 * var(--b));
+      border: max(2px, calc(0.37 * var(--b))) solid var(--ouro);
+      border-radius: calc(2.2 * var(--b));
+      font-size: max(12px, calc(3.3 * var(--b))); line-height: 1.2;
+      color: #fff;
+    }
+    .selo-area svg { width: max(22px, calc(6 * var(--b))); height: max(22px, calc(6 * var(--b))); fill: var(--ouro); flex: none; }
+
+    .bio__frase {
+      margin-top: calc(5 * var(--b));
+      font-size: max(1rem, calc(4.3 * var(--b))); font-weight: 300; line-height: 1.4;
+      text-wrap: balance;
+    }
+
+    .bio__links { display: flex; flex-direction: column; gap: calc(3.4 * var(--b)); margin-top: calc(6.5 * var(--b)); }
+    .bio__links a {
+      display: flex; align-items: center; justify-content: center; gap: calc(2.8 * var(--b));
+      min-height: max(54px, calc(14.5 * var(--b)));
+      padding: 0 calc(4 * var(--b));
+      border-radius: max(12px, calc(2.6 * var(--b)));
+      font-size: max(16px, calc(4.4 * var(--b))); line-height: 1.2;
+      text-decoration: none;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease, background-color 0.25s ease;
+    }
+    .bio__links a:hover { transform: translateY(-2px); }
+    .bio__links svg { flex: none; width: max(34px, calc(9 * var(--b))); height: max(34px, calc(9 * var(--b))); }
+    /* botão claro do site, com o círculo dourado do WhatsApp */
+    .btn-whats {
+      background: linear-gradient(90deg, #ffffff 0%, #f6f1e6 45%, #c4ad77 100%);
+      color: var(--grafite); font-weight: 700;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    }
+    .btn-whats:hover { box-shadow: 0 16px 36px rgba(0, 0, 0, 0.32); filter: brightness(1.03); }
+    .btn-whats svg { fill: var(--ico-whats); }
+    /* site: grafite com contorno dourado fino e o globo dourado */
+    .btn-site {
+      background: rgba(243, 239, 232, 0.05);
+      border: 1px solid rgba(178, 148, 78, 0.75);
+      color: var(--claro); font-weight: 500;
+    }
+    .btn-site:hover { background: rgba(243, 239, 232, 0.1); }
+    .btn-site svg { fill: var(--ouro); padding: calc(0.9 * var(--b)); }
+
+    .bio__info {
+      display: flex; flex-direction: column; align-items: center; gap: calc(2.2 * var(--b));
+      margin-top: calc(7 * var(--b));
+      font-size: max(0.9rem, calc(3.6 * var(--b))); font-weight: 300; line-height: 1.3;
+      color: var(--claro-2);
+    }
+    .bio__info li { display: flex; align-items: center; gap: calc(2 * var(--b)); }
+    .bio__info svg { flex: none; width: max(16px, calc(4.4 * var(--b))); height: max(16px, calc(4.4 * var(--b))); fill: var(--ouro); }
+
+    .bio__rodape {
+      margin-top: auto;
+      padding-top: calc(8 * var(--b));
+      font-size: max(12px, calc(3 * var(--b))); font-weight: 300; line-height: 1.4;
+      color: rgba(243, 239, 232, 0.55);
+    }
+
+    /* entrada suave, só para quem não pediu menos movimento */
+    @media (prefers-reduced-motion: no-preference) {
+      .bio__aline, .bio__texto > * { animation: subir 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+      .bio__texto > :nth-child(2) { animation-delay: 0.06s; }
+      .bio__texto > :nth-child(3) { animation-delay: 0.12s; }
+      .bio__texto > :nth-child(4) { animation-delay: 0.18s; }
+      .bio__texto > :nth-child(5) { animation-delay: 0.24s; }
+      .bio__texto > :nth-child(n+6) { animation-delay: 0.3s; }
+      @keyframes subir { from { opacity: 0; transform: translateY(12px); } }
+    }
+  </style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-whats" viewBox="0 0 512 512"><path d="m256 0c-141.363281 0-256 114.636719-256 256s114.636719 256 256 256 256-114.636719 256-256-114.636719-256-256-256zm5.425781 405.050781c-.003906 0 .003907 0 0 0h-.0625c-25.644531-.011719-50.84375-6.441406-73.222656-18.644531l-81.222656 21.300781 21.738281-79.375c-13.410156-23.226562-20.464844-49.578125-20.453125-76.574219.035156-84.453124 68.769531-153.160156 153.222656-153.160156 40.984375.015625 79.457031 15.96875 108.382813 44.917969 28.929687 28.953125 44.851562 67.4375 44.835937 108.363281-.035156 84.457032-68.777343 153.171875-153.21875 153.171875zm0 0"/><path d="m261.476562 124.46875c-70.246093 0-127.375 57.105469-127.40625 127.300781-.007812 24.054688 6.726563 47.480469 19.472657 67.75l3.027343 4.816407-12.867187 46.980468 48.199219-12.640625 4.652344 2.757813c19.550781 11.601562 41.964843 17.738281 64.816406 17.746094h.050781c70.191406 0 127.320313-57.109376 127.351563-127.308594.011718-34.019532-13.222657-66.003906-37.265626-90.066406-24.042968-24.0625-56.019531-37.324219-90.03125-37.335938zm74.90625 182.035156c-3.191406 8.9375-18.484374 17.097656-25.839843 18.199219-6.597657.984375-14.941407 1.394531-24.113281-1.515625-5.5625-1.765625-12.691407-4.121094-21.828126-8.0625-38.402343-16.578125-63.484374-55.234375-65.398437-57.789062-1.914063-2.554688-15.632813-20.753907-15.632813-39.59375 0-18.835938 9.890626-28.097657 13.398438-31.925782 3.511719-3.832031 7.660156-4.789062 10.210938-4.789062 2.550781 0 5.105468.023437 7.335937.132812 2.351563.117188 5.507813-.894531 8.613281 6.570313 3.191406 7.664062 10.847656 26.5 11.804688 28.414062.957031 1.917969 1.59375 4.152344.320312 6.707031-1.277344 2.554688-5.519531 8.066407-9.570312 13.089844-1.699219 2.105469-3.914063 3.980469-1.679688 7.8125 2.230469 3.828125 9.917969 16.363282 21.296875 26.511719 14.625 13.039063 26.960938 17.078125 30.789063 18.996094 3.824218 1.914062 6.058594 1.59375 8.292968-.957031 2.230469-2.554688 9.570313-11.175782 12.121094-15.007813 2.550782-3.832031 5.105469-3.191406 8.613282-1.914063 3.511718 1.273438 22.332031 10.535157 26.160156 12.449219 3.828125 1.917969 6.378906 2.875 7.335937 4.472657.960938 1.597656.960938 9.257812-2.230469 18.199218zm0 0"/></symbol>
+  <symbol id="i-balanca" viewBox="0 0 26 26"><path d="M19,24.968v1H7v-1c0-0.551,0.449-1,1-1h2.013c0.053-1.248,0.863-2.29,1.987-2.689V9.554 c-0.527-0.333-0.88-0.917-0.88-1.587H12h2h0.88c0,0.67-0.353,1.254-0.88,1.587v11.724c1.124,0.399,1.934,1.441,1.987,2.689H18 C18.551,23.968,19,24.417,19,24.968z M26,15.967c-0.733,2.064-2.685,3.553-5,3.553s-4.267-1.49-5-3.553h1.154l3.378-8.953 c0.146-0.39,0.789-0.39,0.936,0l3.378,8.953H26z M23.777,15.967L21,8.608l-2.777,7.36H23.777z M5,5.978 c0.453,0,0.822-0.303,0.95-0.714c0.331-0.126,0.67-0.296,1.018-0.472C7.733,4.406,8.6,3.967,9.5,3.967 c0.864,0,1.404,0.399,1.713,0.739c-0.012,0.086-0.026,0.172-0.026,0.261c0,1.001,0.812,1.813,1.813,1.813s1.813-0.812,1.813-1.813 c0-0.089-0.014-0.174-0.026-0.26c0.308-0.339,0.848-0.74,1.713-0.74c0.9,0,1.767,0.438,2.531,0.824 c0.349,0.176,0.688,0.346,1.019,0.472c0.128,0.411,0.497,0.714,0.95,0.714c0.558,0,1.01-0.452,1.01-1.01s-0.452-1.01-1.01-1.01 c-0.288,0-0.545,0.124-0.729,0.318c-0.247-0.104-0.514-0.237-0.789-0.376c-0.864-0.437-1.843-0.932-2.982-0.932 c-0.996,0-1.690,0.379-2.161,0.787c-0.211-0.233-0.481-0.407-0.788-0.506c0.373-0.2,0.635-0.581,0.635-1.032 C14.186,1.561,13,0.032,13,0.032s-1.186,1.529-1.186,2.184c0,0.452,0.262,0.832,0.635,1.032c-0.307,0.098-0.577,0.273-0.788,0.506 C11.19,3.346,10.496,2.967,9.5,2.967c-1.139,0-2.119,0.495-2.983,0.932C6.242,4.039,5.976,4.172,5.729,4.275 C5.545,4.082,5.288,3.957,5,3.957c-0.558,0-1.01,0.452-1.01,1.01S4.442,5.978,5,5.978z M5,19.521c-2.315,0-4.267-1.49-5-3.553 h1.154l3.378-8.953c0.146-0.39,0.789-0.39,0.936,0l3.378,8.953H10C9.267,18.031,7.315,19.521,5,19.521z M7.777,15.967L5,8.608 l-2.777,7.36H7.777z"/></symbol>
+  <symbol id="i-pin-cheio" viewBox="0 0 24 24"><path d="M12 1.8a7.4 7.4 0 0 0-7.4 7.4c0 5.5 7.4 13 7.4 13s7.4-7.5 7.4-13A7.4 7.4 0 0 0 12 1.8Zm0 10.3a2.9 2.9 0 1 1 0-5.8 2.9 2.9 0 0 1 0 5.8Z"/></symbol>
+  <mask id="m-relogio-cheio" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24"><rect width="24" height="24" fill="#fff"/><path d="M12 6.8V12l3.4 2.1" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></mask>
+  <symbol id="i-relogio-cheio" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" mask="url(#m-relogio-cheio)"/></symbol>
+  <!-- globo do botão do site: cheio, com os detalhes vazados, como os outros ícones -->
+  <mask id="m-globo" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24"><rect width="24" height="24" fill="#fff"/><g fill="none" stroke="#000" stroke-width="1.5"><ellipse cx="12" cy="12" rx="4.3" ry="10.5"/><path d="M1 12h22M2.6 7.5h18.8M2.6 16.5h18.8"/></g></mask>
+  <symbol id="i-globo" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10.5" mask="url(#m-globo)"/></symbol>
+</svg>
+
+<main class="bio">
+  <div class="bio__foto">
+    <img class="bio__logo" src="/img/logo-a-perna-dourada.png?v=2" alt="Trindade Advocacia" width="228" height="240">
+    <img class="bio__aline" src="/img/aline-hero.webp?v=20261119-4" alt="Dra. Aline Trindade, advogada previdenciária em Florianópolis" width="792" height="990" fetchpriority="high">
+  </div>
+
+  <div class="bio__texto">
+    <h1 class="bio__nome">Dra. Aline Trindade</h1>
+    <p class="bio__oab">Trindade Advocacia · OAB/PR 46.738</p>
+    <p class="selo-area"><svg aria-hidden="true"><use href="#i-balanca"/></svg>Advocacia Previdenciária e Trabalhista</p>
+    <p class="bio__frase">Atendimento presencial em Florianópolis (SC) e online para todo o Brasil.</p>
+
+    <nav class="bio__links" aria-label="Links">
+      <a class="btn-whats" href="https://wa.me/5548996100312?text=Ol%C3%A1%2C%20Dra.%20Aline!%20Vim%20pelo%20Instagram%20e%20gostaria%20de%20falar%20sobre%20o%20meu%20caso." target="_blank" rel="noopener">
+        <svg aria-hidden="true"><use href="#i-whats"/></svg>
+        Conversar pelo WhatsApp
+      </a>
+      <a class="btn-site" href="/">
+        <svg aria-hidden="true"><use href="#i-globo"/></svg>
+        Conhecer o site
+      </a>
+    </nav>
+
+    <ul class="bio__info">
+      <li><svg aria-hidden="true"><use href="#i-pin-cheio"/></svg>Multi Open, Florianópolis (SC)</li>
+      <li><svg aria-hidden="true"><use href="#i-relogio-cheio"/></svg>Segunda a sexta, das 9h às 18h</li>
+    </ul>
+
+    <p class="bio__rodape">© 2026 Trindade Advocacia</p>
+  </div>
+</main>
+
+</body>
+</html>

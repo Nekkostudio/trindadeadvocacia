@@ -724,6 +724,8 @@ html { scroll-padding-top: 0; }
   font-size: max(0.9rem, calc(17.5 * var(--u))); font-weight: 300; line-height: 1.2;
   color: #fff;
 }
+/* frase do agendamento logo abaixo do horário (20/11), mais perto da linha de cima */
+.rodape__col p + p { margin-top: max(4px, calc(6 * var(--u))); }
 
 .rodape__col--contato { display: flex; flex-direction: column; align-items: stretch; gap: max(8px, calc(12 * var(--u))); }
 .rodape__rotulo { padding-left: 0.4em; margin-top: calc(-8 * var(--u)); font-size: max(0.85rem, calc(17 * var(--u))); font-weight: 400; line-height: 1; }
