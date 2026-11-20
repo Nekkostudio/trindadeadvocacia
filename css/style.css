@@ -501,21 +501,33 @@ html { scroll-padding-top: 0; }
 .cartao--largo { grid-column: 1 / -1; min-height: max(150px, calc(200 * var(--u))); }
 .cartao--largo p { max-width: calc(900 * var(--u)); }
 
-/* mesma largura dos cartões dourados (seção 2, painel e Sobre); o conteúdo segue a largura do site */
+/* sem o quadro dourado em volta (19/11): o conteúdo fica solto, na largura do site */
 .trabalho {
-  width: min(calc(1749 * var(--u)), calc(100% - 24px));
   margin: max(18px, calc(28 * var(--u))) auto 0;
-  padding-block: max(24px, calc(48 * var(--u)));
-  border: max(2px, calc(4 * var(--u))) solid var(--ouro);
-  border-radius: var(--raio);
+  padding-top: var(--esp-titulo);
 }
 .trabalho__dentro {
-  width: min(var(--cw), calc(100% - 32px));
+  width: min(var(--cw), calc(100% - 56px)); /* no celular, alinhado com os cartões do painel de cima */
   margin-inline: auto;
   display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 22px 40px;
 }
 .trabalho h3 { font-family: var(--serif); font-weight: 400; font-variation-settings: "opsz" 96; font-size: max(1.9rem, calc(58 * var(--u))); line-height: 1.05; }
 .trabalho p { margin-top: 10px; max-width: calc(640 * var(--u)); font-size: max(1rem, calc(22 * var(--u))); color: var(--claro-2); }
+/* causas trabalhistas (19/11): 3 colunas, cada uma com o ícone cheio no dourado, no estilo dos ícones do atendimento.
+   As colunas têm a largura do próprio texto e se espalham até a borda do botão, para cada item caber em uma linha */
+.trabalho__lista {
+  flex: 1 1 100%;
+  display: grid; grid-template-columns: repeat(3, auto); justify-content: space-between;
+  gap: max(16px, calc(26 * var(--u))) max(20px, calc(40 * var(--u)));
+  margin-top: max(4px, calc(10 * var(--u)));
+  padding-top: max(22px, calc(40 * var(--u)));
+  border-top: 1px solid rgba(178, 148, 78, 0.4);
+}
+.trabalho__lista li {
+  display: flex; align-items: center; gap: max(12px, calc(18 * var(--u)));
+  font-size: max(1rem, calc(22 * var(--u))); line-height: 1.3; color: var(--claro);
+}
+.trabalho__lista svg { width: max(28px, calc(44 * var(--u))); height: max(28px, calc(44 * var(--u))); flex: none; color: var(--ouro); fill: currentColor; }
 
 /* =========================================================
    5. SOBRE
@@ -1051,6 +1063,10 @@ html { scroll-padding-top: 0; }
     font-size: max(15px, 3.4vw);
   }
   .hero .btn-claro__icone { width: max(30px, 6vw); height: max(30px, 6vw); }
+
+  /* Direito do Trabalho: a lista em uma coluna, entre o texto e o botão */
+  .trabalho__lista { grid-template-columns: 1fr; order: 1; margin-top: 0; padding-top: 20px; gap: 14px; }
+  .trabalho .btn-claro { order: 2; }
 
   /* rodapé: Localização e Horário sem a pílula, maiores, com o ícone no bege (ouro) do site alinhado com o texto */
   .rodape__etiqueta { height: auto; padding: 0; background: none; gap: 0.4em; font-size: 1.2rem; }
